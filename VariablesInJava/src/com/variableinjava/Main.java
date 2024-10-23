@@ -2,8 +2,6 @@ package com.variableinjava;
 
 //* Types and types convertion 
 
-import java.util.Calendar;
-
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -106,42 +104,44 @@ public class Main {
             int inter2 = (int) '‽';      //* This gonna be equal to 8253
 
 
-            //* Section 2.4 Object Casting
+            void section2_4(){
+                //* Section 2.4 Object Casting
 
-            /*
-             * As with primitives, objects can be cast both explicitly and implicitly
-             *
-             * Implicit casting happens when the source type extends or implements the target type (casting to super class or
-             * interface)
-             *
-             * Explicit casting has to be done when the source type is extended or implemented by the target type (casting to a
-             * subtype). This can produce a runtime exception (ClassCastException) when the object being cast is not of the target
-             * type (or target's subtype).
-            */
+                /*
+                * As with primitives, objects can be cast both explicitly and implicitly
+                *
+                * Implicit casting happens when the source type extends or implements the target type (casting to super class or
+                * interface)
+                *
+                * Explicit casting has to be done when the source type is extended or implemented by the target type (casting to a
+                * subtype). This can produce a runtime exception (ClassCastException) when the object being cast is not of the target
+                * type (or target's subtype).
+                */
 
-            Float floatVariable = new Float(42.0f);
-            Number num = floatVariable;        //* Implicit (Float implements Number)
-            Float floatVaFloat2 = (Float) num; //* Explicit whay
-            Double doubleVariable = (Double) num; //* Throws exception (the objects is not Double)
+                Float floatVariable = new Float(42.0f);
+                Number num = floatVariable;        //* Implicit (Float implements Number)
+                Float floatVaFloat2 = (Float) num; //* Explicit whay
+                Double doubleVariable = (Double) num; //* Throws exception (the objects is not Double)
 
-            //* Section 2.5 Testing is an object can be cast using instanceof
+                //* Section 2.5 Testing is an object can be cast using instanceof
 
-            /*
-             * Java provides the intanceof operator to test if an object is of a certain type, or a subclass of that type. The program
-             * can then choose to cast or not cast that object accordingly
-             * 
-            */
+                /*
+                * Java provides the intanceof operator to test if an object is of a certain type, or a subclass of that type. The program
+                * can then choose to cast or not cast that object accordingly
+                * 
+                */
 
-            Object obj = Calendar.getInstance();
-            int time = 0;
+                Object obj = Calendar.getInstance();
+                int time = 0;
 
-            if(obj instanceof  Calendar)
-            {
-                time = ((Calendar)obj).getTime();
-            }
-            if(obj intanceof Date)
-            {
-                time = ((Date)obj).getTime()
+                if(obj instanceof  Calendar)
+                {
+                    time = ((Calendar)obj).getTime();
+                }
+                if(obj intanceof Date)
+                {
+                    time = ((Date)obj).getTime()
+                }
             }
 
 }
