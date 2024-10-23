@@ -1,0 +1,87 @@
+package java;
+
+public class Chapter3_Getters_and_Setters{
+
+    /*
+     *
+     *  This article discusses getters and setter; the standard way to provide access to data in Java classe
+     *
+     */
+
+    void section3_1(){
+        /*
+         *
+         *  Section 3.1: Using a setter or getter to implement a constraint
+         *
+         *      Setters and Getters allow for an object contain private variables which can be accessed and chaged with
+         *      restrictions. For example: look to the class person
+         *
+         */
+
+        public class Person{
+            private String name;
+
+            public String getName(){
+                return name<
+            }
+
+            public void setName(String name){
+                if(name != null && name.length()>2)
+                {
+                    this.name = name
+                }
+            }
+            /*
+             *  In this Person class, there is a single variable: name. This variable can be accessed using the gatName() method and
+             *  changed using the setName(String) method, however setting a name requires the new name to have a length
+             *  greather than 2 and to not be null. Using a setter method rather than making the variable name public 
+             *  allows others to set the value of name with certain restrictions. The same can be applied to the getter method:
+             *  public String getName(){
+             *      if(name.length()>16)
+             *      {
+             *          return "Name is too large!";
+             *      }
+             *      else
+             *      {
+             *          return name;
+             *      }
+             *  }
+             *
+             *  In the modified getName() method above, the name is returnid only if its length is less than or equal to 16.
+             *  Otherwise, "Name is too large!" is returned. This allows the programmer to create variables that are reachable
+             *  and modifiable however they wish, preventing client classes from editing the variables unwantedly
+             *
+             */
+        }
+    }
+
+    void section3_2(){
+        /*
+         *  Section 3.2: Why use Getters and Setters
+         *
+         *      Consider a basic class containing an object with getters and setters in Java:
+         *
+        */
+
+        public class CountHolder{
+            private int count = 0;
+
+            public int getCount(){
+                return count;
+            }
+
+            public void setCount(int num){
+                count = num;
+            }
+        }
+
+        /*
+         *
+         *  We can't access the count variable because it's privat. But we can access the getCount() and the setCount(int)
+         *  methods because they are public. To some, this might raise the question; why introduce the middleman? Why not
+         *  just simply make the count public?
+         *
+         */
+    }
+}
+
