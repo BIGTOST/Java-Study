@@ -81,6 +81,39 @@ public class Chapter3_Getters_and_Setters{
          *  methods because they are public. To some, this might raise the question; why introduce the middleman? Why not
          *  just simply make the count public?
          *
+         *  public class CountHolder{
+         *      public int count = 0;
+         *  }
+         *
+         *  For all intents and purposes, these two are exactly the same, functionality-wise. The difference between them is the 
+         *  extensibility. Consider what each
+         *
+         *      First: "I have a  method that will give you an int value, and a method that will set that value to another int"
+         *      Second: "I have an int that you can set and gets as you please"
+         *
+         *  These might sound similar, but the firsst is actually much more guarded in it nature; it only lets you interact with its 
+         *  internal nature as it dictates. This leaves  the ball in its court; it gets to choose how internal interactions occurs. The
+         *  Second has exposed its internal implemnetation externally, and is now not only prone to external users, but, in the case of 
+         *  an API, committed to maintaining that implementation (or otherwise releasing a non-backwards compatible API).
+         *
+         *  Lets consider if we want to synchronize access to modifying and accessing the count. In the first, this is simple:
+         *
+         *  public class CountHolder(){
+         *      private int count = 0;
+         *
+         *      public synchronized int getCount() {
+         *          return count;
+         *      }
+         * 
+         *      public synchronized void setCount( int num){
+         *          count = num;
+         *      }
+         *
+         * }
+         *
+         *  But int the second example, this is now nearly impossible without foing and modifying each place where 
+         *  the count variables is referenced. Worse still, if this is an item that you're providing in a library to be consumed by
+         *  others, you do not have a way of performing that modification, and are forced to make hard choice, mentioned above
          */
     }
 }
